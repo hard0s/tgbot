@@ -18,17 +18,16 @@ def get_user_message(message):
         case "id":
             bot.send_message(message.chat.id, f"твой id: {message.from_user.id}", parse_mode='html')
         case "photo":
-            print("Chose type: vilance or genshin?")
-            if message.text == "vilance":
-                photo = open("Rodrigo.png", "rb")
-                bot.send_photo(message.chat.id, photo)
-            if message.text == "genshin":
                 photo = open("test.jpg", "rb")
                 bot.send_photo(message.chat.id, photo)
-            else:
-                print("What?")
+        case "rodrigo":
+            photo = open("Rodrigo.png", "rb")
+            bot.send_photo(message.chat.id, photo)        
         case "мох":
             audio = open('mox.mp3', 'rb')
+            bot.send_audio(message.chat.id, audio)
+        case "megadeth":
+            audio = open("We\'ll Be Back.mp3", 'rb')
             bot.send_audio(message.chat.id, audio)
         case "Авдеева":
             bot.send_message(message.chat.id, 'https://vk.com/away.php?to=https%3A%2F%2Fvas3k.ru%2Fblog%2Fblockchain%2F&cc_key=')
